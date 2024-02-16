@@ -43,7 +43,7 @@ def create_season_df(df):
     return group_season
 
 # load dataset
-bike_sharing_df = pd.read_csv('hour.csv')
+bike_sharing_df = pd.read_csv('https://github.com/fdlrhmnwafii/Bike-Sharing-Analysis/blob/main/dashboard/hour.csv')
 bike_sharing_df['dteday'] = pd.to_datetime(bike_sharing_df['dteday'])
 
 # Filter Data
