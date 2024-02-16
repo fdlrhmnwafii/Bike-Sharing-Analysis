@@ -125,7 +125,7 @@ sns.barplot(
     x = 'season',
     y = 'cnt',
     data=season_df,
-    palette=colors,`
+    palette=colors,
     ax=ax
 )
 ax.set_title('Count Bike Sharing based on Season')
