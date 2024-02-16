@@ -71,7 +71,7 @@ season_df = create_season_df(main_df)
 
 st.header('Fadel Bike Sharing Dashboard :sparkles:')
 st.subheader('Bike Sharing Perform')
-st.dataframe(data=bike_share_monthly)
+# st.dataframe(data=bike_share_monthly)
 
 fig, ax = plt.subplots(figsize=(12, 6))
 sns.lineplot(
@@ -92,7 +92,7 @@ st.pyplot(fig)
 
 st.subheader("Comparison of Bike Share During Holidays and Working Days per Year")
 st.dataframe(data=holidays_df2011)
-st.dataframe(data=holidays_df2012)
+# st.dataframe(data=holidays_df2012)
 
 colors = ["#D3D3D3", "#72BCD4", "#D3D3D3", "#D3D3D3", "#D3D3D3"]
 fig, ax = plt.subplots(nrows=1, ncols=2, figsize=(10, 4))
@@ -117,7 +117,7 @@ ax[1].set_xticklabels(holidays_df2012.index, rotation=0)
 st.pyplot(fig)
 
 st.subheader("Average Bike Rent Depends on Seasonal Condition")
-st.dataframe(data=season_df)
+# st.dataframe(data=season_df)
 
 colors = ["#D3D3D3","#D3D3D3", "#D3D3D3", "#72BCD4"]
 fig, ax = plt.subplots(figsize=(8, 8))
