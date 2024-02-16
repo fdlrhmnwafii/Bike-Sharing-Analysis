@@ -6,8 +6,13 @@ Hai Semuanya nama saya Fadhlurrahman Muhammad Wafii atau biasa di panggil Fadel.
 Untuk menggunakan dashboard, silahkan download file dashboard.py dan hour.csv simpan ke dalam satu direktori yang sama. setelah itu buka anaconda prompt selanjutnya lakukan tahap berikut:
 ## Setup Environment and Run Streamlit app
 ~~~
-cd direktori fil
+cd direktori file
+
 conda create --name main-ds python=3.9
+
 conda activate main-ds
+
 pip install numpy pandas scipy matplotlib seaborn jupyter streamlit babel
+
 streamlit run dashboard.py
+
