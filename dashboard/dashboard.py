@@ -2,53 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+
 # Helper Function
-
-def create_bike_share_monthly_df(df):
-    monthly_rent_df = df.groupby(['yr','mnth']).agg({
-        'cnt':'mean'
-        })
-    month_mapping = {
-        1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June',
-        7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'
-        }
-    year_mapping = {0: 2011, 1: 2012}
-    monthly_rent_df.rename(index=year_mapping, level='yr', inplace=True)
-    monthly_rent_df.rename(index=month_mapping, level='mnth', inplace=True)
-    return monthly_rent_df
-
-def create_holidays_df(df):
-    rent_bike_2011 = df[df['yr']==0]
-    rent_bike_2012 = df[df['yr']==1]
-    days_mapping = {
-        0 : 'Working Days',
-        1 : 'Holidays'
-        }
-    rent_bike_2011['holiday'] = rent_bike_2011['holiday'].map(days_mapping)
-    rent_bike_2012['holiday'] = rent_bike_2012['holiday'].map(days_mapping)
-    grouped_by_holiday_2011 = rent_bike_2011.groupby('holiday')['cnt'].count()
-    grouped_by_holiday_2012 = rent_bike_2012.groupby(['holiday'])['cnt'].count()
-    return grouped_by_holiday_2011, grouped_by_holiday_2012
-
-def create_season_df(df):
-    season_df = df
-    season_labels = {
-        1 : 'Clear',
-        2 : 'Mist',
-        3 : 'Light (Snow/Rain)',
-        4 : 'Heavy Rain'
-        }
-    season_df['season'] = season_df['season'].map(season_labels)
-    group_season = season_df.groupby('season')['cnt'].sum().reset_index().sort_values('cnt')
-    return group_season
-
-# load dataset
-bike_sharing_df = pd.read_csv('import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import streamlit as st
-# Helper Function
-
 def create_bike_share_monthly_df(df):
     monthly_rent_df = df.groupby(['yr','mnth']).agg({
         'cnt':'mean'
@@ -170,7 +125,7 @@ sns.barplot(
     x = 'season',
     y = 'cnt',
     data=season_df,
-    palette=colors,
+    palette=colors,`
     ax=ax
 )
 ax.set_title('Count Bike Sharing based on Season')
